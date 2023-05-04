@@ -1,13 +1,17 @@
 package com.banco.bancoprueba;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+import static org.assertj.core.api.Assertions.assertThat;
+
+
+@SpringBootTest(properties = "foo=bar")
 class BancoPruebaApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+	@Value("${foo}")
+	String foo;
+
 
 }
